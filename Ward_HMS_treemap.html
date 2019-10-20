@@ -1,0 +1,51 @@
+
+<html>
+<head>
+  <script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-base.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/8.7.0/themes/sea.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-core.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-treemap.min.js"></script>
+</head>
+<body>
+  <div id="container" style="width: 1500px; height: 700px;"></div>
+  <script>
+anychart.onDocumentReady(function () {
+    // create data
+    var data = [{"name": "Types of Service", "children": [{"name": "Insurance", "children": [{"name": "LeslieGodwinLd", "value": 770552}, {"name": "ARStenhousePartner", "value": 16019}]}, {"name": "Reports", "children": [{"name": "TheCommitteeofLloyds", "value": 628}]}, {"name": "Towage", "children": [{"name": "BritanniaSteamTowingCoLd", "value": 41520}, {"name": "W.RouseSons", "value": 6480}, {"name": "RibbleNavigation", "value": 10684}, {"name": "UnitedTowingCoLd", "value": 1459920}, {"name": "LMSRly", "value": 6758}, {"name": "LeithSalvageTowageCoLtd", "value": 48720}, {"name": "LawsonBaleyTugsLtd", "value": 30000}, {"name": "TheMilfordDocksCo.", "value": 600}, {"name": "WRouseSons", "value": 2880}, {"name": "C.Blundell", "value": 150}, {"name": "TheElliotSteamTugCo.Ltd.", "value": 21600}, {"name": "TheBisonTugCo", "value": 9600}]}, {"name": "Vouchers", "children": [{"name": "BulkTravel", "value": 6529}]}, {"name": "Fuel", "children": [{"name": "BritishMexicanPatrolCoLd", "value": 40500}]}, {"name": "Assistance", "children": [{"name": "TheBensonTugCo.", "value": 4800}, {"name": "S.Charnley", "value": 180}, {"name": "JWignall", "value": 360}, {"name": "AlexandraTowingCoLd", "value": 6240}]}, {"name": "Dues", "children": [{"name": "TyneImprovementCommissioners", "value": 1611}, {"name": "NeathHarbourCommissioners", "value": 88742}]}, {"name": "Preparing", "children": [{"name": "LelantDepot", "value": 446}, {"name": "MilfordHavenDepot", "value": 392}, {"name": "JRCatterall", "value": 3849}, {"name": "ShipsRuns", "value": 5434}]}, {"name": "Gratuity", "children": [{"name": "InverkeithingDepot", "value": 1680}, {"name": "GraysWharfDepot", "value": 112}, {"name": "PembrokeDepot", "value": 1320}, {"name": "BritonFerryDepot", "value": 2040}]}, {"name": "Pilotage", "children": [{"name": "R.GardnerLancaster", "value": 2280}, {"name": "GSKelway", "value": 1482}, {"name": "MerseyDksBroBoard", "value": 1785}, {"name": "GCFoxCo", "value": 2564}, {"name": "TrinityHousePilotage", "value": 2907}, {"name": "W.C.Evans", "value": 729}, {"name": "StepehnPhillips", "value": 3220}, {"name": "RMcIntine", "value": 480}]}, {"name": "Carriage", "children": [{"name": "GreatWesternRailway", "value": 18029}]}, {"name": "Damage", "children": [{"name": "HMDockyardPortsmouth", "value": 1560}]}, {"name": "Run", "children": [{"name": "RWSole", "value": 25053}, {"name": "ANoakes", "value": 3348}, {"name": "ChaoPainter", "value": 2877}]}, {"name": "Inspecting", "children": [{"name": "GraysDepot", "value": 323}, {"name": "PrestonDepot", "value": 88}, {"name": "Lelant", "value": 195}]}, {"name": "u/c", "children": [{"name": "LNERailway", "value": 737}]}, {"name": "Inward", "children": [{"name": "PortofNeath", "value": 3224}, {"name": "TrinityHouse", "value": 2079}]}, {"name": "Expenses", "children": [{"name": "Admiralty", "value": 840}]}, {"name": "Storage", "children": [{"name": "LMSRailwayCo.", "value": 1500}]}, {"name": "Services", "children": [{"name": "TheMarcomInternationalMarineComm.Co.Ltd.", "value": 4123}, {"name": "JInison", "value": 528}]}, {"name": "Haulage", "children": [{"name": "DevenportDockyard", "value": 54}]}, {"name": "Watching", "children": [{"name": "Birkenhead", "value": 288}, {"name": "LiverpoolDepot", "value": 1906}, {"name": "TRBattorall", "value": 1215}]}, {"name": "Attendance", "children": [{"name": "RCrane", "value": 720}]}, {"name": "Dock", "children": [{"name": "GRCharnley", "value": 855}]}, {"name": "Refund", "children": [{"name": "PaymasterRoyalNetherlandNavyLondon", "value": 1661}]}, {"name": "Walney", "children": [{"name": "CustomsExcise", "value": 1312}]}, {"name": "Boat", "children": [{"name": "Wsmith", "value": 612}]}, {"name": "Water", "children": [{"name": "W.G.LucasSon", "value": 946}]}]}];
+
+// apply sea theme
+anychart.theme(anychart.themes.sea);
+
+// create a chart and set the data
+    chart = anychart.treeMap(data, "as-tree");
+
+// set the maximum depth of levels shown
+    chart.maxDepth(3);
+
+// configure the text of headers in the hovered state
+    chart.hovered().headers().format("{%value}");
+
+// configure the font of headers
+    chart.normal().headers().fontColor("#990000");
+    chart.normal().headers().fontSize("14");
+    chart.normal().headers().fontWeight('bold');
+    chart.hovered().headers().fontColor("#000099");
+
+// set the chart title
+    chart.title().useHtml(true);
+    chart.title("Treemap: Business Partners of T.W.Ward<br><br>" +
+                "<span style='font-size:12; font-style:italic'>" +
+                "Visualised with anychart.js</span>");
+
+// set the container id
+    chart.container("container");
+
+// initiate drawing the chart
+    chart.draw();
+});
+    
+// enable/disable headers
+function headersEnabled(enabled) {
+  chart.headers(enabled);}
+  </script>
+</body>
