@@ -7,4 +7,4 @@ You can make use of this material under the license of CC BY 4.0
 
 ## An example of Information Visualisation
 
-Click <a href="https://n-kokaze.github.io/British_shipbreaking/Ward_HMS_treemap.html">here</a> to look at an example for visualising the business partnership of Thomas. W. Ward, a British shipbreaker in the 20th century.
+Click <a href="https://naoki-kokaze.github.io/British_shipbreaking/Ward_HMS_treemap.html">here</a> to look at an example for visualising the business partnership of Thomas. W. Ward, a British shipbreaker in the 20th century.
